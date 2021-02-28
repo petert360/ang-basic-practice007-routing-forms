@@ -9,7 +9,7 @@ import { EventService } from '../service/event.service';
   styleUrls: ['./event-editor.component.scss']
 })
 export class EventEditorComponent implements OnInit {
-  event: Event = new Event;
+  event: Event = new Event();
 
   constructor(
     private eventService: EventService,
