@@ -1,41 +1,42 @@
 <form>
     <div class="form-group">
         <label for="id">ID:</label>
-        <input [(ngModel)]="event.id" type="text" name="id" id="id" class="form-control" required>
-        <!-- <small id="idHelp" class="form-text text-muted">Event id</small> -->
+        <input [(ngModel)]="event.id" type="text" name="id" id="id" class="form-control" required #eventId="ngModel">
+        <small [hidden]="eventId.valid" id="idHelp" class="form-text text-muted">Az ID kitöltése kötelező.</small>
+
     </div>
     <div class="form-group">
         <label for="name">Name:</label>
-        <input [(ngModel)]="event.name" type="text" name="name" id="name" class="form-control" pattern=".{8,}" required>
-        <!-- <small id="nameHelp" class="form-text text-muted">Event name</small> -->
+        <input [(ngModel)]="event.name" type="text" name="name" id="name" class="form-control" pattern=".{8,}" required #eventName="ngModel">
+        <small [hidden]="eventName.valid" id="nameHelp" class="form-text text-muted">A NAME kitöltése kötelező legalább 8 karakterrel.</small>
     </div>
 
     <div class="form-group">
         <label for="date">Date:</label>
-        <input [(ngModel)]="event.date" type="text" name="date" id="date" class="form-control" required>
-        <!-- <small id="dateHelp" class="form-text text-muted">Event date</small> -->
+        <input [(ngModel)]="event.date" type="text" name="date" id="date" class="form-control" required #eventDate="ngModel">
+        <small [hidden]="eventDate.valid" id="dateHelp" class="form-text text-muted">A DATE kitöltése kötelező.</small>
     </div>
 
     <div class="form-group">
         <label for="time">Time:</label>
-        <input [(ngModel)]="event.time" type="text" name="time" id="time" class="form-control" required>
-        <!-- <small id="timeHelp" class="form-text text-muted">Event time</small> -->
+        <input [(ngModel)]="event.time" type="text" name="time" id="time" class="form-control" required #eventTime="ngModel">
+        <small [hidden]="eventTime.valid" id="timeHelp" class="form-text text-muted">A TIME kitöltése kötelező.</small>
     </div>
 
     <div class="form-group">
         <label for="locationAddress">Address:</label>
-        <input [(ngModel)]="event.location.address" type="text" name="address" id="address" class="form-control" required>
-        <!-- <small id="addressHelp" class="form-text text-muted">Event address</small> -->
+        <input [(ngModel)]="event.location.address" type="text" name="address" id="address" class="form-control" required #eventAddress="ngModel">
+        <small [hidden]="eventAddress.valid" id="addressHelp" class="form-text text-muted">Az ADDRESS kitöltése kötelező.</small>
     </div>
     <div class="form-group">
         <label for="locationCity">City:</label>
-        <input [(ngModel)]="event.location.city" type="text" name="city" id="city" class="form-control" required>
-        <!-- <small id="cityHelp" class="form-text text-muted">Event city</small> -->
+        <input [(ngModel)]="event.location.city" type="text" name="city" id="city" class="form-control" required #eventCity="ngModel">
+        <small [hidden]="eventCity.valid" id="cityHelp" class="form-text text-muted">A CITY kitöltése kötelező</small>
     </div>
     <div class="form-group">
         <label for="locationCountry">Country:</label>
-        <input [(ngModel)]="event.location.country" type="text" name="country" id="country" class="form-control" required>
-        <!-- <small id="countryHelp" class="form-text text-muted">Event country</small> -->
+        <input [(ngModel)]="event.location.country" type="text" name="country" id="country" class="form-control" required #eventCountry="ngModel">
+        <small [hidden]="eventCountry.valid" id="countryHelp" class="form-text text-muted">A COUNTRY kitöltése kötelező.</small>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
