@@ -6,6 +6,7 @@ import { EventsListComponent } from './page/events-list/events-list.component';
 const routes: Routes = [
   { path: '', component: EventsListComponent },
   { path: 'event/:id', component: EventEditorComponent },
+  { path: '**', component: EventsListComponent },
 ];
 
 @NgModule({
