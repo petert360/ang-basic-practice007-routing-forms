@@ -19,7 +19,8 @@
 
     <div class="form-group">
         <label for="time">Time:</label>
-        <input [(ngModel)]="event.time" type="text" name="time" id="time" class="form-control" pattern="^(?:[01]?\d|2[0-3])(?::[0-5]\d){1,2}$" required #eventTime="ngModel">
+        <!-- https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s06.html -->
+        <input [(ngModel)]="event.time" type="text" name="time" id="time" class="form-control" pattern="^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$" required #eventTime="ngModel">
         <small [hidden]="eventTime.valid" id="timeHelp" class="form-text text-muted">A TIME kitöltése kötelező ÓÓ:PP formátumban.</small>
     </div>
 
