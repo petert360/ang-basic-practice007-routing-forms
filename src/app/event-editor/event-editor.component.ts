@@ -19,7 +19,7 @@ export class EventEditorComponent implements OnInit {
   ngOnInit(): void {
     this.ar.params.subscribe(
       params =>
-        this.eventService.get(params.id).subscribe(
+        this.eventService.get(Number(params.id)).subscribe( // a params.id egy string, amit numberré alakítunk a Number() segítségével
           event => {
             console.log(event);
             this.event = event || new Event();
