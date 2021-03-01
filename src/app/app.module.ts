@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { EventsListComponent } from './page/events-list/events-list.component';
 import { NavigationComponent } from './common/navigation/navigation.component';
 import { EventEditorComponent } from './event-editor/event-editor.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EventEditorComponent } from './event-editor/event-editor.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
