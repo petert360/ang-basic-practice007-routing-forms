@@ -1,4 +1,4 @@
-<form>
+<form #eventForm="ngForm">
     <div class="form-group">
         <label for="id">ID:</label>
         <input [(ngModel)]="event.id" type="text" name="id" id="id" class="form-control" required #eventId="ngModel">
@@ -38,5 +38,5 @@
         <input [(ngModel)]="event.location.country" type="text" name="country" id="country" class="form-control" required #eventCountry="ngModel">
         <small [hidden]="eventCountry.valid" id="countryHelp" class="form-text text-muted">A COUNTRY kitöltése kötelező.</small>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button [disabled]="!eventForm.form.valid" type="submit" class="btn btn-primary">Submit</button>
 </form>
