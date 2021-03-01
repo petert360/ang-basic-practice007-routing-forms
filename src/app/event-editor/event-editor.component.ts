@@ -28,4 +28,8 @@ export class EventEditorComponent implements OnInit {
     );
   }
 
+  onSubmit():void {
+    this.eventService.update(this.event)
+  }
+
 }
